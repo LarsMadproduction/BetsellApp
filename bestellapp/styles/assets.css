@@ -1,0 +1,27 @@
+.header_img{
+    height: 80px;
+    margin-left: 16px;
+}
+
+.section_images{
+    height: 350px;
+    object-fit: cover;
+    width: 100%;
+
+}
+
+.taschi_img{
+    height: 100px;
+}
+
+.star{
+    height: 16px;
+}
+
+.cart_img{
+    height: 16px;
+}
+
+.delivery_img{
+    height: 16px;
+}

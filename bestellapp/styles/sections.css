@@ -1,0 +1,50 @@
+.section_order{
+    display: flex;
+}
+
+.menu{
+    width: calc(100% - 300px);
+}
+
+.taschi_position{
+    width: 100px;
+    position: relative;
+    transform: translate(45%, -60px);
+}
+
+.menu_order{
+    padding: 16px;
+    position: relative;
+    top: -90px;
+}
+
+.score{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 24px;
+}
+
+.delivery_order{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 14px;
+}
+
+.menu_nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 24px;
+    padding: 4px;
+    gap: 16px;
+    border: 1px solid black;
+    border-radius: 16px;
+    height: auto;
+    background-color: white;
+    /* width: calc(100% - 354px);
+    position: fixed;
+    z-index: 1000;    
+    top: 0px; */
+}

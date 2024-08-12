@@ -1,0 +1,50 @@
+.basket_button{
+    background-color: orange;
+    padding: 8px;
+    width: 100%;
+    border-radius: 34px;
+    border: none;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.basket_button:hover{
+    border: 2px solid black;
+}
+
+.add_meal{
+    margin: 16px;
+    padding: 0px 9px;
+    font-size: 24px;
+    border-radius: 50px;
+    background-color: rgba(255, 166, 0, 0.349);
+}
+
+.add_meal:hover{
+    background-color: orange;
+
+}
+
+.minus_button{
+    padding: 8px 20px;
+    font-size: 24px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: rgba(255, 166, 0, 0.349);
+}
+
+.minus_button:hover{
+    background-color: orange;
+}
+
+.plus_button{
+    padding: 8px 17px;
+    font-size: 24px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: rgba(255, 166, 0, 0.349);
+}
+
+.plus_button:hover{
+    background-color: orange;
+}

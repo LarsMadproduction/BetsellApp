@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bestellapp</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/assets.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/sections.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/basket.css" />
+    <link rel="stylesheet" href="./styles/buttons.css" />
+    <link rel="stylesheet" href="./styles/menu.css" />
+    <link rel="stylesheet" href="./styles/scrollbar.css" />
+    <script src="./scripts/db.js"></script>
+    <script src="./scripts/template.js"></script>
+    <script src="./scripts/inputhow2get.js"></script>
+    <script src="./script.js"></script>
+  </head>
+  <body onload="init()">
+    <header>
+      <img class="header_img" src="./assets/img/Logo.png" alt="BestellApp" />
+    </header>
+    <div class="section_order">
+      <section class="menu">
+        <img
+          class="section_images"
+          src="./assets/img/Pizzaitalia.jpg"
+          alt="Pizza"
+        />
+        <div class="taschi_position">
+          <img
+            class="taschi_img"
+            src="./assets/img/TaschisPizzaLogo.png"
+            alt=""
+          />
+        </div>
+        <div class="menu_order">
+          <div><h1>Pizzeria Taschi´s</h1></div>
+          <div class="score">
+            <img class="star" src="./assets/img/star.png" alt="Stern" />
+            <p>4.7</p>
+          </div>
+          <div class="delivery_order">
+            <img
+              class="cart_img"
+              src="./assets/img/cart.png"
+              alt="Einkaufswagen"
+            />
+            <p>Min. 15,00 €</p>
+            |
+            <img
+              class="delivery_img"
+              src="./assets/img/delivery.png"
+              alt="Lieferung"
+            />
+            <p>5,00 €</p>
+          </div>
+          <div class="menu_nav">
+            <a href="">Salate</a>
+            <a href="">Pizza</a>
+            <a href="">American Pizza</a>
+            <a href="">Pasta</a>
+            <a href="">Al Forno</a>
+            <a href="">Getränke</a>
+          </div>
+        </div>
+        <div id="content"></div>
+      </section>
+      <section class="basket">
+        <div class="basket_top_section">
+          <div>
+            <h2 class="h2_basket">Warenkorb</h2>
+          </div>
+          <div class="switch_order">
+            <label class="switch">
+              <input id="how2get" type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div id="basketOrder">
+          <div class="order_section">
+            <div class="dish_basket">
+              <div><span>1</span> <span>name</span></div>
+              <span>preis</span>
+            </div>
+            <div class="count_basket">
+              <button class="minus_button">-</button>
+              <span>1</span>
+              <button class="plus_button">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="basket_bottom_section">
+          <div class="delivery_price">
+            <span>Zwischensumme:</span>
+            <span>5,00 €</span>
+          </div>
+          <div class="total_price">
+            <span>Gesamt:</span>
+            <span>1000,00 €</span>
+          </div>
+          <button class="basket_button">Bezahlen:&nbsp;1000,00 €</button>
+        </div>
+      </section>
+    </div>
+    <footer></footer>
+  </body>
+</html>

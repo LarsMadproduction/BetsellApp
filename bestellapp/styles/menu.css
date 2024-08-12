@@ -1,0 +1,30 @@
+
+.menu_content{
+    border: 1px solid black;
+    margin: 16px;
+    border-radius: 16px;
+}
+
+.meal_order{
+    display: flex;
+    justify-content: space-between;
+}
+
+.meal_title{
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+}
+
+.meal_ingrediants{
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+}
+
+.meal_price{
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+    margin-bottom: 16px;
+}
