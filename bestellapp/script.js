@@ -9,17 +9,15 @@ function addDishes(){
         let name = dishes[dishindex].name;
         let ingredients = dishes[dishindex].ingredients;
         let price = dishes[dishindex].price;
-        contentRef.innerHTML += dishesTemplate(name, ingredients, price, dishindex)
-        let addToBasketRef = document.getElementsByClassName('dish_basket');
-        for (let basketindex = 0; basketindex < dishes[dishindex].length; basketindex++) {
-            addToBasketRef[dishindex].innerHTML += basketTemplate()
-        }
+        contentRef.innerHTML += dishesTemplate(name, ingredients, price, dishindex) 
     }
 }
 
-function addBasket(index){
-    const itemName = dishes[index];
-    let addToBasket = document.getElementById(`content${index}`)
-    basketTemplate().push(addToBasket)
-    init();
+function addBasket(basketindex){
+    let dishItem = dishes[basketindex];
+    shoppingBasket.push(dishItem);
+    let contentBasketRef = document.getElementById('contentBasket');
+    let name = dishes[basketindex].name;
+    let price = dishes[basketindex].price;
+    contentBasketRef.innerHTML += basketTemplate(price, name, basketindex);
 }
