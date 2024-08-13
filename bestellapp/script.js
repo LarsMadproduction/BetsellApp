@@ -1,5 +1,6 @@
 function init(){
     addDishes();
+    addTitles();
 }
 
 function addDishes(){
@@ -10,6 +11,17 @@ function addDishes(){
         let ingredients = dishes[dishindex].ingredients;
         let price = dishes[dishindex].price;
         contentRef.innerHTML += dishesTemplate(name, ingredients, price, dishindex) 
+    }
+}
+
+function addTitles(){
+    let contentTitleRef = document.getElementById('contentTitle')
+    contentTitleRef.innerHTML = "";
+    for (let titleindex = 0; titleindex < titles.length; titleindex++) {
+        let img = titles[titleindex].img;
+        let title = titles[titleindex].title;
+        let info = titles[titleindex].info;
+        contentTitleRef.innerHTML += titleTemplate(img, title, info, titleindex)
     }
 }
 

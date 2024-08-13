@@ -11,12 +11,20 @@ function dishesTemplate(name, ingredients, price, basketindex){
 
 function basketTemplate(price, name){
     return `<div class="dish_basket">
-            <div><span>1</span><span>${name}</span></div>
+            <div><span>1</span>&nbsp;<span>${name}</span></div>
             <span>${price.toLocaleString('de-DE', { style: 'currency', currency: 'EUR'})}</span>
           </div>
           <div class="count_basket">
             <button class="minus_button">-</button>
             <span>1</span>
             <button class="plus_button">+</button>
+          </div>`
+}
+
+function titleTemplate(img, title, info, titleindex){
+    return `<div class="genre_tilte">
+            <img class="genre_img" src="${img}"/>
+            <h2>${title}</h2>
+            <p>${info}</p>
           </div>`
 }

@@ -25,3 +25,10 @@
 .delivery_img{
     height: 16px;
 }
+
+.genre_img{
+    height: 200px;
+    object-fit: cover;
+    width: 100%; 
+    border-radius: 16px;
+}

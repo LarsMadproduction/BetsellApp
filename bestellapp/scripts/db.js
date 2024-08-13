@@ -1,4 +1,36 @@
 let shoppingBasket = []
+let titles = [
+    {
+        "img": "./assets/img/insalata.jpg",
+        "title": "Salate",
+        "info": "Alle Salate werden mit gemischtem Salat zubereitet und mit 5 Brötchen und Kräuter-Creme serviert.",
+    },
+    {
+        "img": "./assets/img/Pizzaitalia.jpg",
+        "title": "Pizza",
+        "info": "Alle Pizzen werden mit Tomatensauce, Oregano und Käse zubereitet.",
+    },
+    {
+        "img": "./assets/img/pizzaamerica.jpg",
+        "title": "American Pizza",
+        "info": "Alle Pizzen werden mit doppeltem Teig und doppeltem Käse zubereitet.",
+    },
+    {
+        "img": "./assets/img/pasta.jpg",
+        "title": "Pasta",
+        "info": "",
+    },
+    {
+        "img": "./assets/img/alforno.jpg",
+        "title": "Al Forno",
+        "info": "",
+    },
+    {
+        "img": "./assets/img/softdrink.jpg",
+        "title": "Getränke",
+        "info": "",
+    },
+]
 let dishes =[
     {
         "name": "Insalata Verde",
