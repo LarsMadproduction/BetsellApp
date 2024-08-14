@@ -4,7 +4,7 @@ let dishes = [
         "img": "./assets/img/insalata.jpg",
         "headline": "Salate",
         "info": "Alle Salate werden mit gemischtem Salat zubereitet und mit 5 Brötchen und Kräuter-Creme serviert.",
-         menu:[
+        "menu":[
             {
                 "name": "Insalata Verde",
                 "ingredients": "mit grünem Salat, ohne gemischten Salat",
