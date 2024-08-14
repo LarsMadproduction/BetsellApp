@@ -1,27 +1,18 @@
 function init(){
     addDishes();
-    addTitles();
 }
 
 function addDishes(){
     let contentRef = document.getElementById('content');
     contentRef.innerHTML = "";
     for (let dishindex = 0; dishindex < dishes.length; dishindex++) {
-        let name = dishes[dishindex].name;
-        let ingredients = dishes[dishindex].ingredients;
-        let price = dishes[dishindex].price;
-        contentRef.innerHTML += dishesTemplate(name, ingredients, price, dishindex) 
-    }
-}
-
-function addTitles(){
-    let contentTitleRef = document.getElementById('contentTitle')
-    contentTitleRef.innerHTML = "";
-    for (let titleindex = 0; titleindex < titles.length; titleindex++) {
-        let img = titles[titleindex].img;
-        let title = titles[titleindex].title;
-        let info = titles[titleindex].info;
-        contentTitleRef.innerHTML += titleTemplate(img, title, info, titleindex)
+        let name = dishes[dishindex].title[0].menu;
+        let ingredients = dishes[dishindex].title[0].menu;
+        let price = dishes[dishindex].title[0].menu;
+        let img = dishes[dishindex].title[0].img;
+        let headline = dishes[dishindex].title[0].headline;
+        let info = dishes[dishindex].title[0].info;
+        contentRef.innerHTML += dishesTemplate(name, ingredients, price, img, headline, info, dishindex) 
     }
 }
 
@@ -29,7 +20,7 @@ function addBasket(basketindex){
     let dishItem = dishes[basketindex];
     shoppingBasket.push(dishItem);
     let contentBasketRef = document.getElementById('contentBasket');
-    let name = dishes[basketindex].name;
-    let price = dishes[basketindex].price;
+    let name = dishes[basketindex].title[0].menu;
+    let price = dishes[basketindex].title[0].menu;
     contentBasketRef.innerHTML += basketTemplate(price, name, basketindex);
 }
