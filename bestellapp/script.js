@@ -1,26 +1,30 @@
+let clicks = 0;
+let secondclicks = 0;
+let addPrice = 0;
+
 function init(){
-    addDishes();
+    renderDishes();
 }
 
-function addDishes(){
-    let contentRef = document.getElementById('content');
-    contentRef.innerHTML = "";
+function renderDishes(){
+    let dishesRef = document.getElementById('content');
+    dishesRef.innerHTML = "";
     for (let dishindex = 0; dishindex < dishes.length; dishindex++) {
-        let name = dishes[dishindex].title[0].menu;
-        let ingredients = dishes[dishindex].title[0].menu;
-        let price = dishes[dishindex].title[0].menu;
-        let img = dishes[dishindex].title[0].img;
-        let headline = dishes[dishindex].title[0].headline;
-        let info = dishes[dishindex].title[0].info;
-        contentRef.innerHTML += dishesTemplate(name, ingredients, price, img, headline, info, dishindex) 
+        let img = dishes[dishindex].img;
+        let headline = dishes[dishindex].headline;
+        let info = dishes[dishindex].info;
+        dishesRef.innerHTML += dishesTemplate(img, headline, info, dishindex)
+        for (let menuindex = 0; menuindex < dishes[dishindex].length; menuindex++) {
+            let name = dishes[dishindex][menuindex].menu[menuindex].name;
+            let ingredients = dishes[menuindex].menu[menuindex].ingredients;
+            let price = dishes[menuindex].menu[menuindex].price;
+            dishesRef.innerHTML += menuTemplate(name, ingredients, price, menuindex) 
+        } 
     }
+    // renderMenus();
 }
 
-function addBasket(basketindex){
-    let dishItem = dishes[basketindex];
-    shoppingBasket.push(dishItem);
-    let contentBasketRef = document.getElementById('contentBasket');
-    let name = dishes[basketindex].title[0].menu;
-    let price = dishes[basketindex].title[0].menu;
-    contentBasketRef.innerHTML += basketTemplate(price, name, basketindex);
-}
+// function renderMenus(){
+//     let menuRef = document.getElementById('content');
+    
+// }
