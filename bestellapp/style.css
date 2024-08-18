@@ -41,3 +41,21 @@ a:hover{
 .d_none{
     display: none;
 }
+
+@media (max-width:508px){
+    h1{
+        font-size: 32px;
+    }
+    
+    h2{
+        font-size: 24px;
+    }
+    
+    h3{
+        font-size: 12px;
+    }
+    
+    p{
+        font-size: 12px;
+    }
+}

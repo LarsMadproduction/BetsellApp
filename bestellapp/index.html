@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./styles/buttons.css" />
     <link rel="stylesheet" href="./styles/menu.css" />
     <link rel="stylesheet" href="./styles/scrollbar.css" />
-    <link rel="stylesheet" href="./styles/orderedOverlay.css">
+    <link rel="stylesheet" href="./styles/orderedOverlay.css" />
     <script src="./scripts/db.js"></script>
     <script src="./scripts/template.js"></script>
     <script src="./scripts/how2get.js"></script>
@@ -77,16 +77,28 @@
           <div>
             <h2 class="h2_basket">Warenkorb</h2>
           </div>
-          <div class="switch_order">
-            <label class="switch">
-              <input id="how2get" type="checkbox" />
-              <span class="slider round"></span>
-            </label>
-          </div>
         </div>
         <div id="contentBasket" class="order_section"></div>
         <div id="basketTotalValue" class="basket_bottom_section"></div>
       </section>
+      <section id="basketMobile" class="basket_mobile d_none">
+        <div class="basket_top_section">
+          <div>
+            <h2 class="h2_basket">Warenkorb</h2>
+          </div>
+          <div class="switch_order">
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div id="contentBasketMobile" class="order_section"></div>
+        <div id="basketTotalValueMobile" class="basket_bottom_section"></div>
+      </section>
+      <button onclick="showBasket()" id="closeBasket" class="open_close_basket">
+        Warenkorb Öffnen
+      </button>
     </div>
     <footer></footer>
   </body>

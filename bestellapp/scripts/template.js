@@ -23,7 +23,22 @@ function basketTemplate(basketIndex){
     return `<div id="eachBasket${basketIndex}">
                 <div class="dish_basket">
                     <div><span id="basketDishName">${newBasketItem.name}</span></div>
-                    <span class="add_price" id="addPrice${basketIndex}"></span>
+                    <span id="addPrice${basketIndex}"></span>
+                </div>
+                <div class="count_basket">
+                    <button onclick="delAmount(${basketIndex})" class="minus_button">-</button>
+                    <span class="second_counter" id="secondclicks${basketIndex}">${newBasketItem.amount}</span>
+                 <button onclick="addAmount(${basketIndex})" class="plus_button">+</button>
+                </div>
+            </div>`
+}
+
+function basketTemplateMobile(basketIndex){
+    let newBasketItem = basket[basketIndex]
+    return `<div id="eachBasket${basketIndex}">
+                <div class="dish_basket">
+                    <div><span id="basketDishName">${newBasketItem.name}</span></div>
+                    <span id="addPriceMobile${basketIndex}"></span>
                 </div>
                 <div class="count_basket">
                     <button onclick="delAmount(${basketIndex})" class="minus_button">-</button>
@@ -42,10 +57,21 @@ function basketEmptyMessageTemplate() {
 function basketCostTemplate() {
     return `<div class="delivery_price">
                 <span>Zwischensumme:</span>
-                <span id="subSum"></span>
+                <span id="subSum" class="sub_sum"></span>
             </div>
             <button id="totalBill" onclick="sendOrder()" class="basket_button"></button>        
             <div onclick="closeOverlay()" id="overlay" class="overlay">
             <div onclick="logDownPrev(event)" id="confirmedOrder" class="confirmed_order">Vielen Dank für deine Bestellung</div>
+            </div>`
+}
+
+function basketCostTemplateMobile() {
+    return `<div class="delivery_price">
+                <span>Zwischensumme:</span>
+                <span id="subSumMobile" class="sub_sum"></span>
+            </div>
+            <button id="totalBillMobile" onclick="sendOrderMobile()" class="basket_button"></button>        
+            <div onclick="closeOverlayMobile()" id="overlayMobile" class="overlay">
+            <div onclick="logDownPrev(event)" id="confirmedOrderMobile" class="confirmed_order">Vielen Dank für deine Bestellung</div>
             </div>`
 }

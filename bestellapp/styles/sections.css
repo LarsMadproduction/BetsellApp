@@ -43,9 +43,11 @@
     border-radius: 16px;
     height: auto;
     background-color: white;
-    overflow: hidden;
-    /* width: calc(100% - 354px);
-    position: fixed;
-    z-index: 1000;    
-    top: 0px; */
+    overflow-x: auto;
 }
+
+@media (max-width:800px){
+    .menu{
+      width: 100%;
+    }
+  }

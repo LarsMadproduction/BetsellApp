@@ -29,10 +29,14 @@ function renderBottomBasket(){
     totalValue = 0;
     document.getElementById('contentBasket').innerHTML = "";
     document.getElementById('basketTotalValue').innerHTML = "";
+    document.getElementById('contentBasketMobile').innerHTML = "";
+    document.getElementById('basketTotalValueMobile').innerHTML = "";
     if (basket.length == 0) {
         document.getElementById(`contentBasket`).innerHTML = basketEmptyMessageTemplate();
+        document.getElementById(`contentBasketMobile`).innerHTML = basketEmptyMessageTemplate();
     } else {
         document.getElementById(`basketTotalValue`).innerHTML = basketCostTemplate();
+        document.getElementById(`basketTotalValueMobile`).innerHTML = basketCostTemplateMobile();
     }
     renderBasket();
 }
@@ -41,6 +45,7 @@ function renderBasket() {
     for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
         if (basket[basketIndex].amount >= 1) {
             document.getElementById(`contentBasket`).innerHTML += basketTemplate(basketIndex);
+            document.getElementById(`contentBasketMobile`).innerHTML += basketTemplateMobile(basketIndex);
         }
     calcSubtotal(basketIndex);
     saveToLocalStorage(basketIndex);
@@ -63,10 +68,34 @@ function closeOverlay() {
     location.reload()
 }
 
+function sendOrderMobile(){
+    let overlayRef = document.getElementById('overlayMobile');
+    overlayRef.classList.remove('d_none')
+    let content_dialogRef = document.getElementById('confirmedOrderMobile');
+    content_dialogRef.innerHTML = '';
+    renderBottomBasket();
+}
+
+function closeOverlayMobile() {
+    let overlayRef = document.getElementById('overlayMobile');
+    overlayRef.classList.add('d_none');
+    let content_dialog = document.getElementById('confirmedOrderMobile');
+    content_dialog.innerHTML = '';
+    location.reload()
+}
+
 function logDownPrev(event){    
     event.stopPropagation()
 }
 
-function delBasket(){
-    return emptyBasket;
+function showBasket(){
+    let showBasketButton = document.getElementById('basketMobile');
+    if (showBasketButton.classList.contains('d_none')) {
+            showBasketButton.classList.remove('d_none');
+            document.getElementById('closeBasket').innerHTML = "Warenkorb Schließen";
+    } else {
+        showBasketButton.classList.add('d_none');
+        document.getElementById('closeBasket').innerHTML = "Warenkorb Öffnen";
+
+    }
 }

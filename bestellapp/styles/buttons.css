@@ -50,3 +50,27 @@
 .plus_button:hover{
     background-color: orange;
 }
+
+.open_close_basket{
+    position: fixed;
+    bottom: 0px;
+    background-color: orange;
+    padding: 8px;
+    width: 100%;
+    border-radius: 34px;
+    border: none;
+    font-size: 24px;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.open_close_basket:hover{
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+@media (min-width:801px){
+    .open_close_basket{
+      display: none;
+    }
+  }

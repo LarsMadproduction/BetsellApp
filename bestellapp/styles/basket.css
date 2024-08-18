@@ -11,6 +11,19 @@
     border-left: 1px solid rgba(0, 0, 0, 0.24);
 }
 
+.basket_mobile{
+  width: 100%;
+  flex-grow: 1;
+  position: fixed;
+  bottom: 0px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 1px solid rgba(0, 0, 0, 0.24);
+  background-color: white;
+}
+
 .h2_basket{
     display: flex;
     justify-content: center;
@@ -145,4 +158,16 @@
   .align_basket{
     text-align: center;
     padding-bottom: 16px;
+  }
+
+  @media (max-width:800px){
+    .basket{
+      display: none;
+    }
+  }
+
+  @media (min-width:801px){
+    .basket_mobile{
+      display: none;
+    }
   }
