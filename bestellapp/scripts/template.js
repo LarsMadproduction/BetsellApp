@@ -22,8 +22,8 @@ function basketTemplate(basketIndex){
     let newBasketItem = basket[basketIndex]
     return `<div id="eachBasket${basketIndex}">
                 <div class="dish_basket">
-                    <div><span id="basketDishName">${newBasketItem.name}</span></div>
-                    <span id="addPrice${basketIndex}"></span>
+                    <div><span class="basket_dish_name" id="basketDishName">${newBasketItem.name}</span></div>
+                    <span class="add_price" id="addPrice${basketIndex}"></span>
                 </div>
                 <div class="count_basket">
                     <button onclick="delAmount(${basketIndex})" class="minus_button">-</button>
@@ -37,8 +37,8 @@ function basketTemplateMobile(basketIndex){
     let newBasketItem = basket[basketIndex]
     return `<div id="eachBasket${basketIndex}">
                 <div class="dish_basket">
-                    <div><span id="basketDishName">${newBasketItem.name}</span></div>
-                    <span id="addPriceMobile${basketIndex}"></span>
+                    <div><span class="basket_dish_name" id="basketDishName">${newBasketItem.name}</span></div>
+                    <span class="add_price" id="addPriceMobile${basketIndex}"></span>
                 </div>
                 <div class="count_basket">
                     <button onclick="delAmount(${basketIndex})" class="minus_button">-</button>

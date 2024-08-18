@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="./styles/orderedOverlay.css" />
     <script src="./scripts/db.js"></script>
     <script src="./scripts/template.js"></script>
-    <script src="./scripts/how2get.js"></script>
     <script src="./scripts/add&delet.js"></script>
     <script src="./script.js"></script>
     <script src="./scripts/localStorage.js"></script>
@@ -77,6 +76,8 @@
           <div>
             <h2 class="h2_basket">Warenkorb</h2>
           </div>
+          <div class="switch_order">
+          </div>
         </div>
         <div id="contentBasket" class="order_section"></div>
         <div id="basketTotalValue" class="basket_bottom_section"></div>
@@ -87,14 +88,10 @@
             <h2 class="h2_basket">Warenkorb</h2>
           </div>
           <div class="switch_order">
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
           </div>
         </div>
         <div id="contentBasketMobile" class="order_section"></div>
-        <div id="basketTotalValueMobile" class="basket_bottom_section"></div>
+        <div id="basketTotalValueMobile" class="basket_bottom_section_mobile"></div>
       </section>
       <button onclick="showBasket()" id="closeBasket" class="open_close_basket">
         Warenkorb Öffnen
