@@ -1,46 +1,41 @@
-function addBasket(basketindex, menuindex){
-    // if (`clicks${basketindex}` >= 0 ) {
-    //     addAmount();
-    // }else{
-    let dishItem = dishes[basketindex]['menu'];
-    shoppingBasket.push(dishItem);
-    let contentBasketRef = document.getElementById('contentBasket');
-    let name = dishes[basketindex]['menu'][menuindex].name;
-    contentBasketRef.innerHTML += basketTemplate(name, basketindex, menuindex);
-    clicks += 1;
-    secondclicks += 1;
-    addPrice += dishes[basketindex]['menu'][menuindex].price;
-    document.getElementById(`clicks${menuindex}`).innerHTML = clicks;
-    document.getElementById(`secondclicks${basketindex}`).innerHTML = secondclicks;
-    document.getElementById(`addPrice${basketindex}`).innerHTML = addPrice.toLocaleString('de-DE', { style: 'currency', currency: 'EUR'});  
+function addBasket(dishindex, menuindex){
+    let newBasketItem = dishes[dishindex].menu[menuindex];
+    if (newBasketItem.amount == undefined || newBasketItem.amount == 0) {
+        newBasketItem.amount = 1;
+        basket.push(newBasketItem);
+    } else {
+        newBasketItem.amount++;
     }
-// }
-
-// function addBasket(basketindex){
-
-// }
-
-function addAmount(basketindex){
-    // let dishItem = dishes[basketindex].menu;
-    // shoppingBasket.push(dishItem);
-    // let contentBasketRef = document.getElementById('contentBasket');
-    // contentBasketRef.innerHTML += basketTemplate(basketindex);
-    clicks += 1;
-    secondclicks += 1;
-    addPrice += dishes[basketindex].menu[0].price;
-    document.getElementById(`clicks${basketindex}`).innerHTML = clicks;
-    document.getElementById(`secondclicks${basketindex}`).innerHTML = secondclicks;
-    document.getElementById(`addPrice${basketindex}`).innerHTML = addPrice.toLocaleString('de-DE', { style: 'currency', currency: 'EUR'});
+    renderBottomBasket();
+    document.getElementById('overlay').classList.add('d_none');
 }
 
-function delAmount(basketindex){
-    clicks -= 1;
-    secondclicks -= 1;
-    addPrice -= dishes[basketindex].menu[0].price;
-    document.getElementById(`clicks${basketindex}`).innerHTML = clicks;
-    document.getElementById(`secondclicks${basketindex}`).innerHTML = secondclicks;
-    document.getElementById(`addPrice${basketindex}`).innerHTML = addPrice.toLocaleString('de-DE', { style: 'currency', currency: 'EUR'});
-    if (clicks <= 1) {
-        document.getElementById(`eachBasket${basketindex},${menuindex}`).remove;
+function addAmount(basketIndex) {
+    let basketItem = basket[basketIndex];
+    basketItem.amount++;
+    renderBottomBasket();
+    document.getElementById('overlay').classList.add('d_none');
+}
+
+function delAmount(basketIndex) {
+    let basketItem = basket[basketIndex];
+    basketItem.amount--;
+    if (basketItem.amount == 0) {
+        basket.splice(basketIndex, 1);
     }
+    renderBottomBasket();
+    document.getElementById('overlay').classList.add('d_none');
+}
+
+function calcSubtotal(basketIndex) {
+    let basketItem = basket[basketIndex];
+    let itemPriceSum = document.getElementById(`addPrice${basketIndex}`);
+    let itemPriceValue = basketItem.price * basketItem.amount;
+    itemPriceSum.innerHTML = `${itemPriceValue.toLocaleString('de-DE', { style: 'currency', currency: 'EUR'})}`;
+
+    let subSum = document.getElementById(`subSum`);
+    let totalBill = document.getElementById(`totalBill`);
+    totalValue += itemPriceValue;
+    subSum.innerHTML = totalValue.toLocaleString('de-DE', { style: 'currency', currency: 'EUR'});
+    totalBill.innerHTML = 'Bezahlen: ' + totalValue.toLocaleString('de-DE', { style: 'currency', currency: 'EUR'});
 }

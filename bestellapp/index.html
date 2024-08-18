@@ -14,12 +14,13 @@
     <link rel="stylesheet" href="./styles/buttons.css" />
     <link rel="stylesheet" href="./styles/menu.css" />
     <link rel="stylesheet" href="./styles/scrollbar.css" />
+    <link rel="stylesheet" href="./styles/orderedOverlay.css">
     <script src="./scripts/db.js"></script>
     <script src="./scripts/template.js"></script>
     <script src="./scripts/how2get.js"></script>
     <script src="./scripts/add&delet.js"></script>
     <script src="./script.js"></script>
-
+    <script src="./scripts/localStorage.js"></script>
   </head>
   <body onload="init()">
     <header>
@@ -84,17 +85,7 @@
           </div>
         </div>
         <div id="contentBasket" class="order_section"></div>
-        <div class="basket_bottom_section">
-          <div class="delivery_price">
-            <span>Zwischensumme:</span>
-            <span>5,00 €</span>
-          </div>
-          <div class="total_price">
-            <span>Gesamt:</span>
-            <span>1000,00 €</span>
-          </div>
-          <button class="basket_button">Bezahlen:&nbsp;1000,00 €</button>
-        </div>
+        <div id="basketTotalValue" class="basket_bottom_section"></div>
       </section>
     </div>
     <footer></footer>

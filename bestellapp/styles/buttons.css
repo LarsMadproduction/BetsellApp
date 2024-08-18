@@ -6,10 +6,12 @@
     border: none;
     font-size: 24px;
     margin-bottom: 16px;
+    font-weight: bold;
 }
 
 .basket_button:hover{
     border: 2px solid black;
+    font-weight: bold;
 }
 
 .add_meal{

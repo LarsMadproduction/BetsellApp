@@ -1,4 +1,7 @@
-let shoppingBasket = []
+let totalValue = 0;
+let basket = [];
+let emptyBasket = [];
+let added = true;
 let dishes = [
     {   
         "img": "./assets/img/insalata.jpg",
